@@ -10,11 +10,9 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import accounting from "accounting";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -42,6 +40,16 @@ export default function RecipeReviewCard() {
             H
           </Avatar>
         }
+        action={
+            <Typography
+            variant='h5'
+            color='black'
+            >
+                {accounting.formatMoney(50)}
+
+            </Typography>
+
+        }
         title="Hamburgesa"
         subheader= "Precio" // se trae del back
       />
@@ -55,6 +63,10 @@ export default function RecipeReviewCard() {
         <Typography variant="body2" color="text.secondary">
           Hambuerguesa completa con queso 
         </Typography>
+        <IconButton aria-label='Add to Cart'> 
+             <AddShoppingCartIcon></AddShoppingCartIcon>
+        </IconButton>
+       
       </CardContent>
       <CardActions disableSpacing>
         <ExpandMore
