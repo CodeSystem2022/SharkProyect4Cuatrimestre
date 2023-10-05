@@ -5,9 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
+import logo from '../assets/Shark.png';
 
 export default function Navbar() {
   return (
@@ -18,8 +18,10 @@ export default function Navbar() {
             <img src={logo} style={{ width: '30px', height: '30px' }}/>
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{ color: 'black' }}>
-            News
           </Typography>
+          <Badge badgeContent={2} color='secondary'>
+            <ShoppingCartIcon color='primary' fontSize='large'></ShoppingCartIcon>
+          </Badge>
           <Button color="inherit" style={{ color: 'black' }}>Login</Button>
         </Toolbar>
       </AppBar>
