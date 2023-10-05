@@ -13,6 +13,7 @@ import { red } from '@mui/material/colors';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import accounting from "accounting";
+import imagencombo from '../assets/combo.png'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -55,20 +56,20 @@ export default function RecipeReviewCard() {
       />
       <CardMedia
         component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg" //cargar imagen
+        height="200"
+        image={imagencombo}
         alt="hamburgesa"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           Hambuerguesa completa con queso 
         </Typography>
-        <IconButton aria-label='Add to Cart'> 
-             <AddShoppingCartIcon></AddShoppingCartIcon>
-        </IconButton>
        
       </CardContent>
       <CardActions disableSpacing>
+      <IconButton aria-label='Add to Cart'> 
+             <AddShoppingCartIcon></AddShoppingCartIcon>
+        </IconButton>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
