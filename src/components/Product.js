@@ -35,11 +35,6 @@ export default function RecipeReviewCard() {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            H
-          </Avatar>
-        }
         action={
             <Typography
             variant='h5'
@@ -57,7 +52,7 @@ export default function RecipeReviewCard() {
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg" //cargar imagen
+        image="https://imgs.search.brave.com/GyQgpo15bDIc6keZfryPPpnwG3wduRERRttor0KVyIM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/MDgxNDIwMTQxMTQt/MzA5OTk2MGI3ZTQx/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TTN3/eE1qQTNmREI4TUh4/elpXRnlZMmg4TVRS/OGZHaGhiV0oxY21k/MVpYTmhKVEl3ZVNV/eU1IQmhjR0Z6SlRJ/d1puSnBkR0Z6ZkdW/dWZEQjhmREI4Zkh3/dyZ3PTEwMDAmcT04/MA.jpeg"
         alt="hamburgesa"
       />
       <CardContent>
