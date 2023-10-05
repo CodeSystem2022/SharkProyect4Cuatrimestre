@@ -12,24 +12,15 @@ import { Badge } from '@mui/material';
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" style={{ backgroundColor: '#d7daff' }}>
         <Toolbar>
-          <IconButton 
-            size="large" //quitar el icon button poner la imagen del logo <img src={logo}/> se importa.
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
+          <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+            <img src={logo} style={{ width: '30px', height: '30px' }}/>
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{ color: 'black' }}>
+            News
           </Typography>
-          <Badge badgeContent={2} color='secondary'>
-          <ShoppingCartIcon fontSize="large"></ShoppingCartIcon>
-          </Badge>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" style={{ color: 'black' }}>Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
