@@ -44,6 +44,7 @@ export default function RecipeReviewCard() {
             <Typography
             variant='h5'
             color='black'
+            style={{ fontFamily: 'Source Sans Pro' }}
             >
                 {accounting.formatMoney(50)}
 
