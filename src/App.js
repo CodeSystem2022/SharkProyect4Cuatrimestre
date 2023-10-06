@@ -1,14 +1,15 @@
 
 import './App.css';
 import Navbar from './components/Navbar'
-import Product from './components/Product';
 import Footer from './components/Footer';
+import Products from './components/Products';
 
 function App() {
   return (
     <div className="App">
       <Navbar></Navbar>
-      <Product></Product>
+      <Products></Products>
+      {/*<Product></Product>*/}
       <Footer></Footer>
     </div>
   );

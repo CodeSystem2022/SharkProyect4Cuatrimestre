@@ -15,9 +15,10 @@ export default function Navbar() {
       <AppBar position="fixed" style={{ backgroundColor: '#d7daff' }}>
         <Toolbar>
           <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <img src={logo} style={{ width: '30px', height: '30px' }}/>
+            <img src={logo} style={{ width: '30px', height: '30px' }} alt='logo'/>
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{ color: 'black' }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{ color: 'black' }} fontSize='30px'>
+            SharkBurgers
           </Typography>
           <Badge badgeContent={2} color='secondary'>
             <ShoppingCartIcon color='primary' fontSize='large'></ShoppingCartIcon>
