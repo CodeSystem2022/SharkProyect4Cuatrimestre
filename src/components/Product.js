@@ -11,7 +11,8 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import accounting from "accounting";
-import imagencombo from '../assets/combo.png'
+
+
 
 
 const ExpandMore = styled((props) => {
@@ -25,7 +26,9 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function Product(props) {
+  const { product } = props;
+
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -41,23 +44,23 @@ export default function RecipeReviewCard() {
             color='black'
             style={{ fontFamily: 'Source Sans Pro' }}
             >
-                {accounting.formatMoney(50)}
+                {accounting.formatMoney(product.price)}
 
             </Typography>
 
         }
-        title="Hamburgesa"
+        title={product.name}
         subheader= "Precio" // se trae del back
       />
       <CardMedia
         component="img"
         height="200"
-        image={imagencombo}
+        image={product.image}
         alt="hamburgesa"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Hambuerguesa completa con queso 
+          {product.description}
         </Typography>
        
       </CardContent>
