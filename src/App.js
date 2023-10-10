@@ -2,13 +2,14 @@
 import './App.css';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer';
-import Products from './components/Products';
+import CheckoutPage from './components/CheckoutPage';
 
 function App() {
   return (
     <div className="App">
       <Navbar></Navbar>
-      <Products></Products>
+      <CheckoutPage></CheckoutPage>
+      {/*<Products></Products>*/}
       {/*<Product></Product>*/}
       <Footer></Footer>
     </div>
