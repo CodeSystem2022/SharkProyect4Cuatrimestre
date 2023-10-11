@@ -2,12 +2,15 @@ import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import products from "../product-data";
 import React from "react";
-import Product from "./Product";
+import CheckoutCard from "./CheckoutCard";
+import { Total } from "./Total";
 
+//se define una constante con los estilos que se usaran en el componente
 const checkoutPageStyle = {
   root: {
     flexGrow: 1,
     padding: "2rem",
+    margin: '2rem' 
   },
 };
 
@@ -16,8 +19,8 @@ const CheckoutPage = () => {
     return (
       <React.Fragment>
         {products.map((item) => (
-          <Grid item xs={12} sm={8} md={6} lg={4} key={item.id}>
-            <Product product={item} />
+          <Grid item xs={12} sm={8} md={6} lg={4} >
+            <CheckoutCard key={item.id} product={item} />
           </Grid>
         ))}
       </React.Fragment>
@@ -37,7 +40,7 @@ const CheckoutPage = () => {
         </Grid>
         <Grid item xs={12} sm={8} md={9} container spacing={2}>
           <Typography align="center" gutterBottom variant="h4">
-            Total
+            <Total/>
           </Typography>
         </Grid>
       </Grid>
