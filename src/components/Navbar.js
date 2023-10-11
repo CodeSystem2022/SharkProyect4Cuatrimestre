@@ -8,21 +8,24 @@ import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
 import logo from '../assets/Shark.png';
+import { useTheme } from '@mui/material/styles';
 
 export default function Navbar() {
+  const theme = useTheme();
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" style={{ backgroundColor: '#d7daff' }}>
+    <Box sx={{ fixed: 1 }}>
+      <AppBar position="fixed" style={{ backgroundColor: theme.palette.primary.main }}>
         <Toolbar>
           <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
             <img src={logo} style={{ width: '30px', height: '30px' }}/>
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{ color: 'black' }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{ color: theme.palette.secondary.main }}>
           </Typography>
           <Badge badgeContent={2} color='secondary'>
-            <ShoppingCartIcon color='primary' fontSize='large'></ShoppingCartIcon>
+            <ShoppingCartIcon color='secondary' fontSize='large'></ShoppingCartIcon>
           </Badge>
-          <Button color="inherit" style={{ color: 'black' }}>Login</Button>
+          <Button color="inherit" style={{ color: theme.palette.error.main, fontFamily: theme.typography.fontFamily }}>Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
