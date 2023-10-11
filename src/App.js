@@ -1,4 +1,4 @@
-
+// Hacemos las importaciones necesarias
 import './App.css';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer';
@@ -7,10 +7,12 @@ import CheckoutPage from './components/CheckoutPage';
 import { ThemeProvider } from '@mui/material/styles';
 import { createMyTheme } from './theme';
 
-// Define tu tema aquí
+// Definimos el tema
 const theme = createMyTheme();
 
+
 function App() {
+  // Retornamos la Clase (Div) App
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
@@ -23,4 +25,5 @@ function App() {
   );
 }
 
+// Exportamos la funcioin App
 export default App;

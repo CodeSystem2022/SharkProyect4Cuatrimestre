@@ -24,6 +24,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  //font-size: 2vmin; /* Modificar el tamaño de fuente en relación con el tamaño de la pantalla */
   color: white;
  
 }
@@ -38,5 +39,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    font-size: 16px; /* Modifica el tamaño de fuente para dispositivos móviles */
+  }
+
+  .App-logo {
+    height: 10vmin; /* Ajusta el tamaño del logo para dispositivos móviles */
   }
 }

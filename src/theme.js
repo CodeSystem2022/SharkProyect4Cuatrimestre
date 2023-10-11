@@ -1,3 +1,4 @@
+// En este módulo creamos el tema de paletas de colores
 import { createTheme } from '@mui/material/styles';
 
 export const createMyTheme = () => createTheme({
