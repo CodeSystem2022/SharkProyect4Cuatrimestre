@@ -4,7 +4,7 @@ import Products from './components/Products';
 import CheckoutPage from './components/CheckoutPage';
 import { ThemeProvider } from '@mui/material/styles';
 import { createMyTheme } from './theme';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 // Define tu tema aquí
 const theme = createMyTheme();
@@ -15,14 +15,10 @@ function App() {
 <div className="App">
         <ThemeProvider theme={theme}>
           <Navbar/>
-          <Switch>
-            <Route path="/checkout-page">
-                  <CheckoutPage/>
-            </Route>  
-            <Route path="/">
-                  <Products/>
-            </Route>  
-          </Switch>
+          <Routes>
+          <Route path="/checkout-page" element={<CheckoutPage/>} />
+          <Route path="/" element={<Products/>} />  
+          </Routes>
         </ThemeProvider>
       </div>
     </Router>
