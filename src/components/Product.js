@@ -28,7 +28,6 @@ const ExpandMore = styled((props) => {
 
 export default function Product(props) {
   const { product } = props;
-
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -44,7 +43,7 @@ export default function Product(props) {
             color='black'
             style={{ fontFamily: 'Source Sans Pro' }}
             >
-                {accounting.formatMoney(product.price)}
+                {accounting.formatMoney( product.price, '$')}
 
             </Typography>
 

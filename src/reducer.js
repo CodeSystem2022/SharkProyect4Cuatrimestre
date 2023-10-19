@@ -1,22 +1,26 @@
+// reducer.js
+
 export const initialState = {
-    basket: []
-}
-
-export const actionTypes = {
-     ADD_TO_BASKET: "ADD_TO_BASKET"
-}
-
-//en el caso de recibir un tipo de accion sabe como cambiar el estado inicial
-const reducer = (state , action )=>{
-    console.log(action);
-    switch(action.type){
-        case "ADD_TO_BASKET":
+    basket: [],
+  };
+  
+  export const actionTypes = {
+    ADD_TO_BASKET: "ADD_TO_BASKET",
+  };
+  
+  const reducer = (state, action) => {
+    console.log(action)
+    switch (action.type) {
+      case actionTypes.ADD_TO_BASKET:
         return {
-            ...state,
-            basket: [...state.basket, action.item]
-        }
-        default: return state;
+          ...state,
+          basket: [...state.basket, action.item],
+        };
+      default:
+        return state;
     }
-    
-}
-export default reducer
+  };
+  
+  export default reducer;
+  
+
