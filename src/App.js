@@ -30,22 +30,24 @@ function App() {
 export default App;
 
 */
+import React from "react";
 import Navbar from './components/Navbar';
 import Products from './components/Products';
 import CheckoutPage from './components/CheckoutPage';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {Routes, BrowserRouter as Router, Route} from 'react-router-dom';
 
 function App() {
+
   return (
     <div className='App'>
+      <Navbar/>
+      <CheckoutPage/>
+      <Products/>
       <Router>
-       <Navbar/>
         <Routes>
           <Route path='/checkout-page'>
-           <CheckoutPage/>
           </Route>
           <Route path='/'>
-            <Products/>
           </Route>
         </Routes>
       </Router>
