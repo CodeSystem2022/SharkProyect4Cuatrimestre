@@ -31,29 +31,8 @@ export default App;
 
 */
 import React from "react";
-import Navbar from './components/Navbar';
-import Products from './components/Products';
-import CheckoutPage from './components/CheckoutPage';
-import {Routes, BrowserRouter as Router, Route} from 'react-router-dom';
+import Router from "./app/Router";
 
-function App() {
+const App = () => <Router />
 
-  return (
-    <div className='App'>
-      <Navbar/>
-      <CheckoutPage/>
-      <Products/>
-      <Router>
-        <Routes>
-          <Route path='/checkout-page'>
-          </Route>
-          <Route path='/'>
-          </Route>
-        </Routes>
-      </Router>
-     
-    </div>
-  )
-}
-
-export default App;
+export default App
