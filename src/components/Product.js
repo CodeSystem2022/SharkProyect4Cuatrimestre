@@ -11,6 +11,10 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import accounting from "accounting";
+import { actionTypes } from './reducer';
+import { useStateValue } from './StateProvider';
+
+
 
 
 
@@ -26,14 +30,31 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function Product(props) {
-  const { product } = props;
+export default function Product({
+  product: {id, name, productType, image, price, description},
+}){
+  const [{basket}, dispatch] = useStateValue();
 
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const addToBasket = () => {
+    dispatch({
+      type: actionTypes.ADD_TO_BASKET,
+      item: {
+        id,
+        name,
+        productType,
+        image,
+        price,
+        description
+
+      }
+    })
+  }
 
   return (
     <Card sx={{ maxWidth: 345, marginTop: '80px'}}>
@@ -44,28 +65,28 @@ export default function Product(props) {
             color='black'
             style={{ fontFamily: 'Source Sans Pro' }}
             >
-                {accounting.formatMoney(product.price)}
+                {accounting.formatMoney(price)}
 
             </Typography>
 
         }
-        title={product.name}
+        title={name}
         subheader= "Precio" // se trae del back
       />
       <CardMedia
         component="img"
         height="200"
-        image={product.image}
+        image={image}
         alt="hamburgesa"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {product.description}
+          {description}
         </Typography>
        
       </CardContent>
       <CardActions disableSpacing>
-      <IconButton aria-label='Add to Cart'> 
+      <IconButton aria-label='Add to Cart' onClick={addToBasket}> 
              <AddShoppingCartIcon></AddShoppingCartIcon>
         </IconButton>
         <ExpandMore

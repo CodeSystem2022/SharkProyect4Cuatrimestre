@@ -1,9 +1,9 @@
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import products from "../product-data";
 import React from "react";
 import CheckoutCard from "./CheckoutCard";
 import { Total } from "./Total";
+import { useStateValue } from './StateProvider';
 
 //se define una constante con los estilos que se usaran en el componente
 const checkoutPageStyle = {
@@ -15,10 +15,14 @@ const checkoutPageStyle = {
 };
 
 const CheckoutPage = () => {
+ 
+  const [{basket, dispatch}] = useStateValue();
+  
+
   function FormRow() {
     return (
       <React.Fragment>
-        {products.map((item) => (
+        {basket?.map((item) => (
           <Grid item xs={12} sm={8} md={6} lg={4} >
             <CheckoutCard key={item.id} product={item} />
           </Grid>
