@@ -2,7 +2,6 @@
 //importaciones necesarias para la clase:
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import products from "../product-data";
 import React from "react";
 import Product from "./Product";
 import Navbar from '../components/Navbar';

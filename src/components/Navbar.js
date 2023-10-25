@@ -42,7 +42,7 @@ export default function Navbar() {
             <ShoppingCartIcon sx={{ color: "#025259" }}fontSize='large'></ShoppingCartIcon>
           </Badge>
           <Button sx={{ color: "#025259" }}>Login</Button>
-        </Toolbar>
+     </Toolbar>
       </AppBar>
       </div>
       </>
