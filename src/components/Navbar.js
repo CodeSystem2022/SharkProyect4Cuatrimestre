@@ -9,11 +9,14 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
 import logo from '../assets/Shark.png';
 import { useTheme } from '@mui/material/styles';
+import { ThemeProvider } from 'styled-components';
+import { createMyTheme } from '../theme';
 
+const theme = createMyTheme;
 export default function Navbar() {
-  const theme = useTheme();
-
+  
   return (
+    <ThemeProvider theme={theme}>
     <Box sx={{ fixed: 1 }}>
       <AppBar position="fixed" style={{ backgroundColor: theme.palette.primary.main }}>
         <Toolbar>
@@ -29,5 +32,7 @@ export default function Navbar() {
         </Toolbar>
       </AppBar>
     </Box>
+    </ThemeProvider>
+
   );
 }
