@@ -10,9 +10,13 @@ import { Badge } from '@mui/material';
 import logo from '../assets/Shark.png';
 import { useTheme } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import { useStateValue } from './StateProvider';
+
 
 export default function Navbar() {
   const theme = useTheme();
+  const [{basket, dispatch}] = useStateValue();
+
 
   return (
     <Box sx={{ fixed: 1 }}>
@@ -44,7 +48,7 @@ export default function Navbar() {
           ></Typography>
           <Link to="checkout-page">
             <IconButton>
-              <Badge badgeContent={2} color="secondary">
+              <Badge badgeContent={basket?.length} color="secondary">
                 <ShoppingCartIcon
                   color="secondary"
                   fontSize="large"

@@ -7,6 +7,9 @@ import Typography from '@mui/material/Typography';
 import accounting from "accounting";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { IconButton } from '@mui/material';
+import { useStateValue } from './StateProvider';
+import { actionTypes } from './reducer';
+
 
 
 //se define una constante con los estilos que se usaran en el componente, se declaran en las etiquetas 
@@ -29,8 +32,15 @@ const checkoutCardPageStyle = {
   };
   
 
-export default function CheckoutCard(props) {
-  const { product } = props; // permite acceder a la propiedad product del objeto props y asignarla a una variable local llamada product
+export default function CheckoutCard({
+  product: {id, name, productType, image, price, description},
+}){
+
+  const [{basket}, dispatch] = useStateValue();
+  const removeItem = () => dispatch({
+    type: actionTypes.REMOVE_ITEM,
+    id: id,
+  })
 
 
   return (
@@ -42,21 +52,21 @@ export default function CheckoutCard(props) {
             color='black'
             style={{ fontFamily: 'Source Sans Pro' }}
             >
-                {accounting.formatMoney(product.price)}
+                {accounting.formatMoney(price)}
 
             </Typography>
 
         }
-        title={product.name}
+        title={name}
       />
       <CardMedia 
         component="img"
-        image={product.image}  
+        image={image}  
         className={checkoutCardPageStyle.media}    
         />
       <CardActions disableSpacing className={checkoutCardPageStyle.cardActions}>
         <IconButton>
-         <DeleteIcon fontSize='large'/>
+         <DeleteIcon fontSize='large' onClick={removeItem}/>
         </IconButton>
       </CardActions>
     </Card>
