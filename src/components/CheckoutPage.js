@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import products from "../product-data";
 import React from "react";
 import Product from "./Product";
+import Navbar from '../components/Navbar';
 
 //estilos para la pagina de pago
 const checkoutPageStyle = {
@@ -32,6 +33,8 @@ const CheckoutPage = () => {
 
 //Renderizado de la pagina de pago
   return (
+    <>
+    <Navbar/>
     <div style={checkoutPageStyle.root}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
@@ -49,6 +52,7 @@ const CheckoutPage = () => {
         </Grid>
       </Grid>
     </div>
+    </>
   );
 };
 

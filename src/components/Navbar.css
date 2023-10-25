@@ -1,0 +1,7 @@
+.navbar .MuiAppBar-root {
+    background-color: white !important;
+    border-bottom: 1px solid gray !important;
+  }
+.ShoppingCart .MuiShoppingCartIcon-root {
+    color: #025259 !important;
+}
