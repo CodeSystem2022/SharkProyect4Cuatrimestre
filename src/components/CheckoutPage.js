@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import React from "react";
 import Product from "./Product";
 import Navbar from '../components/Navbar';
-
+import products from "../product-data";
 //estilos para la pagina de pago
 const checkoutPageStyle = {
   root: {
