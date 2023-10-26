@@ -33,16 +33,50 @@ export default function Navbar() {
       <div className="navbar">
       <AppBar position="sticky" color="secondary">
         <Toolbar>
-        <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-        <img src={logo} style={{ width: '60px', height: '60px' }} alt='logo'/>
-        </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          </Typography>
-          <Badge badgeContent={2} sx={{ color: "#025259" }}>
-            <ShoppingCartIcon sx={{ color: "#025259" }}fontSize='large'></ShoppingCartIcon>
-          </Badge>
-          <Button sx={{ color: "#025259" }}>Login</Button>
-     </Toolbar>
+          <Link to="/">
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <img
+                src={logo}
+                style={{ width: "30px", height: "30px" }}
+                alt="logo"
+              />
+            </IconButton>
+          </Link>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1 }}
+            style={{ color: theme.palette.secondary.main }}
+          ></Typography>
+          <Link to="checkout-page">
+            <IconButton>
+              <Badge badgeContent={basket?.length} color="secondary">
+                <ShoppingCartIcon
+                  color="secondary"
+                  fontSize="large"
+                ></ShoppingCartIcon>
+              </Badge>
+            </IconButton>
+          </Link>
+          <Link to="/signin">
+          <Button
+            color="inherit"
+            style={{
+              color: theme.palette.error.main,
+              fontFamily: theme.typography.fontFamily,
+            }}
+          >
+            Sign in
+          </Button>
+
+          </Link>
+        </Toolbar>
       </AppBar>
       </div>
       </>
