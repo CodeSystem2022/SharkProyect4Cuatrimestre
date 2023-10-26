@@ -6,6 +6,8 @@ import CheckoutPage from "./components/CheckoutPage";
 import { ThemeProvider } from "@mui/material/styles";
 import { createMyTheme } from "./theme";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SignIn from "./components/Signin";
+import SignUp from "./components/SignUp";
 
 // Define tu tema aquí
 const theme = createMyTheme();
@@ -17,6 +19,8 @@ function App() {
         <ThemeProvider theme={theme}>
           <Navbar></Navbar>
           <Routes>
+            <Route path="/signup" element={<SignUp/>}/>
+            <Route path="/signin" element={<SignIn/>}/>
             <Route path="/checkout-page" element={<CheckoutPage />}/>
             <Route path="/" element={<Products />}/>
           </Routes>

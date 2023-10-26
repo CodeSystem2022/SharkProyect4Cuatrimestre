@@ -56,6 +56,7 @@ export default function Navbar() {
               </Badge>
             </IconButton>
           </Link>
+          <Link to="/signin">
           <Button
             color="inherit"
             style={{
@@ -63,8 +64,10 @@ export default function Navbar() {
               fontFamily: theme.typography.fontFamily,
             }}
           >
-            Login
+            Sign in
           </Button>
+
+          </Link>
         </Toolbar>
       </AppBar>
     </Box>
