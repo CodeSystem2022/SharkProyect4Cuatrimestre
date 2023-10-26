@@ -9,10 +9,14 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
 import logo from '../assets/Shark.png';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
+import { useStateValue } from './StateProvider';
+
 
 export default function Navbar() {
   const [prevScrollPos, setPrevScrollPos] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
+  const [{basket, dispatch}] = useStateValue();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +37,7 @@ export default function Navbar() {
       <div className="navbar">
       <AppBar position="sticky" color="secondary">
         <Toolbar>
-        {/* <Link to="/"> */}
+        <Link to="/">
         <IconButton size="large" 
         edge="start" 
         color="inherit"
@@ -43,39 +47,25 @@ export default function Navbar() {
         style={{ width: '60px', height: '60px' }} 
         alt='logo'/>
         </IconButton>
-        {/* </Link> */}
+        </Link>
           <Typography
            variant="h6" 
            component="div"
            sx={{ flexGrow: 1 }}>
-      {/* style={{ color: theme.palette.secondary.main }} */}
           </Typography>
-          {/* <Link to="checkout-page">
+          <Link to="checkout-page">
            <IconButton>
-           <Badge badgeContent={basket?.length} color="secondary">
-                <ShoppingCartIcon
-                  color="secondary"
-                  fontSize="large"
-                ></ShoppingCartIcon>
-                </Badge>
-             </IconButton> */}
-          <Badge badgeContent={2} sx={{ color: "#025259" }}>
-            <ShoppingCartIcon sx={{ color: "#025259" }}fontSize='large'></ShoppingCartIcon>
-          </Badge>
-          <Button sx={{ color: "#025259" }}>Login</Button>
-          {/* </Link>
+            <Badge badgeContent={basket?.length} color="secondary">
+                <ShoppingCartIcon sx={{ color: "#025259" }}fontSize='large'></ShoppingCartIcon>
+            </Badge> 
+           </IconButton>
+          </Link>
           <Link to="/signin">
-          <Button
-            color="inherit"
-            style={{
-              color: theme.palette.error.main,
-              fontFamily: theme.typography.fontFamily,
-            }}
-          >
+          <Button sx={{ color: "#025259" }}>
             Sign in
           </Button>
 
-          </Link>*/ }
+          </Link>
         
         </Toolbar>
       </AppBar>
