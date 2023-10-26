@@ -33,37 +33,37 @@ export default function Navbar() {
       <div className="navbar">
       <AppBar position="sticky" color="secondary">
         <Toolbar>
-          <Link to="/">
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <img
-                src={logo}
-                style={{ width: "30px", height: "30px" }}
-                alt="logo"
-              />
-            </IconButton>
-          </Link>
+        {/* <Link to="/"> */}
+        <IconButton size="large" 
+        edge="start" 
+        color="inherit"
+         aria-label="menu" 
+         sx={{ mr: 2 }}>
+        <img src={logo} 
+        style={{ width: '60px', height: '60px' }} 
+        alt='logo'/>
+        </IconButton>
+        {/* </Link> */}
           <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}
-            style={{ color: theme.palette.secondary.main }}
-          ></Typography>
-          <Link to="checkout-page">
-            <IconButton>
-              <Badge badgeContent={basket?.length} color="secondary">
+           variant="h6" 
+           component="div"
+           sx={{ flexGrow: 1 }}>
+      {/* style={{ color: theme.palette.secondary.main }} */}
+          </Typography>
+          {/* <Link to="checkout-page">
+           <IconButton>
+           <Badge badgeContent={basket?.length} color="secondary">
                 <ShoppingCartIcon
                   color="secondary"
                   fontSize="large"
                 ></ShoppingCartIcon>
-              </Badge>
-            </IconButton>
-          </Link>
+                </Badge>
+             </IconButton> */}
+          <Badge badgeContent={2} sx={{ color: "#025259" }}>
+            <ShoppingCartIcon sx={{ color: "#025259" }}fontSize='large'></ShoppingCartIcon>
+          </Badge>
+          <Button sx={{ color: "#025259" }}>Login</Button>
+          {/* </Link>
           <Link to="/signin">
           <Button
             color="inherit"
@@ -75,7 +75,8 @@ export default function Navbar() {
             Sign in
           </Button>
 
-          </Link>
+          </Link>*/ }
+        
         </Toolbar>
       </AppBar>
       </div>
@@ -84,4 +85,5 @@ export default function Navbar() {
    
   );
 }
+
 

@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {Products} from '../components/Products'
 import Navbar from '../components/Navbar';
-import { ThemeProvider } from 'styled-components';
-import { createMyTheme } from '../theme';
 
-const theme = createMyTheme;
+
 
 const Home = () => {
     return (
-        <ThemeProvider theme={theme}>
+       
             <div>
                 <Navbar/>
                 {/*Seccion de productos*/}
@@ -20,7 +18,7 @@ const Home = () => {
                 </Link>
                 {/* ... */}
             </div>
-        </ThemeProvider>
+       
     );
 };
 
