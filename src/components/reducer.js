@@ -6,6 +6,11 @@ export const actionTypes = {
     ADD_TO_BASKET: "ADD_TO_BASKET",
     REMOVE_ITEM: "REMOVE_ITEM"
 }
+//metodo reduce de js
+export const getBasketTotal = (basket) => {
+   return basket?.reduce((amount, item) => item.price + amount, 0)
+}
+
 
 const reducer = (state, action) =>{
     console.log(action);
