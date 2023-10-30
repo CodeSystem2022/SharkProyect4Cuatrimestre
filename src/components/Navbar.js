@@ -50,10 +50,6 @@ export default function Navbar() {
           <Link to="/signin">
           <Button
             color="inherit"
-            style={{
-              color: theme.palette.error.main,
-              fontFamily: theme.typography.fontFamily,
-            }}
           >
             Sign in
           </Button>

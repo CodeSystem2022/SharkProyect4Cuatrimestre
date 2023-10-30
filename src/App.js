@@ -13,7 +13,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-       
           <Navbar></Navbar>
           <Routes>
             <Route path="/signup" element={<SignUp/>}/>
@@ -22,7 +21,6 @@ function App() {
             <Route path="/" element={<Products />}/>
           </Routes>
           <Footer></Footer>
-        </ThemeProvider>
       </div>
     </Router>
   );
