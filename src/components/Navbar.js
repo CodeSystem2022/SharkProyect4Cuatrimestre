@@ -13,27 +13,14 @@ import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 
 
+
 export default function Navbar() {
-  const [prevScrollPos, setPrevScrollPos] = React.useState(0);
-  const [visible, setVisible] = React.useState(true);
-  const [{basket, dispatch}] = useStateValue();
+  const [{basket}, dispatch] = useStateValue();
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      const isScrolledDown = prevScrollPos < currentScrollPos;
 
-      setVisible(isScrolledDown || currentScrollPos < 10);
-      setPrevScrollPos(currentScrollPos);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollPos]);
 
   return (
     <Box sx={{ fixed: 1 }}>
-      <>
       <div className="navbar">
       <AppBar position="sticky" color="secondary">
         <Toolbar>
@@ -49,10 +36,10 @@ export default function Navbar() {
         </IconButton>
         </Link>
           <Typography
-           variant="h6" 
-           component="div"
-           sx={{ flexGrow: 1 }}>
-          </Typography>
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1 }}
+          ></Typography>
           <Link to="checkout-page">
            <IconButton>
             <Badge badgeContent={basket?.length} color="secondary">
@@ -61,7 +48,13 @@ export default function Navbar() {
            </IconButton>
           </Link>
           <Link to="/signin">
-          <Button sx={{ color: "#025259" }}>
+          <Button
+            color="inherit"
+            style={{
+              color: theme.palette.error.main,
+              fontFamily: theme.typography.fontFamily,
+            }}
+          >
             Sign in
           </Button>
 
@@ -70,7 +63,7 @@ export default function Navbar() {
         </Toolbar>
       </AppBar>
       </div>
-      </>
+  
     </Box>
    
   );

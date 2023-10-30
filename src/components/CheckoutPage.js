@@ -3,9 +3,11 @@
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import React from "react";
-import Product from "./Product";
-import Navbar from '../components/Navbar';
-import products from "../product-data";
+import { useStateValue } from './StateProvider';
+import CheckoutCard from "./CheckoutCard";
+import { Total } from "./Total";
+
+
 //estilos para la pagina de pago
 const checkoutPageStyle = {
   root: {
@@ -17,13 +19,15 @@ const checkoutPageStyle = {
 
 //Clase Checkout Page
 const CheckoutPage = () => {
+  const [{basket}, dispatch] = useStateValue();
+
   //Funcion FormRow que renderiza cada producto en una cuadricula
   function FormRow() {
     return (
       <React.Fragment>
-        {products.map((item) => (
+        {basket.map((item) => (
           <Grid item xs={12} sm={8} md={6} lg={4} key={item.id}>
-            <Product product={item} />
+            <CheckoutCard key={item.id} product={item} />
           </Grid>
         ))}
       </React.Fragment>
@@ -32,8 +36,6 @@ const CheckoutPage = () => {
 
 //Renderizado de la pagina de pago
   return (
-    <>
-    <Navbar/>
     <div style={checkoutPageStyle.root}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
@@ -46,12 +48,12 @@ const CheckoutPage = () => {
         </Grid>
         <Grid item xs={12} sm={8} md={9} container spacing={2}>
           <Typography align="center" gutterBottom variant="h4">
-            Total
+           <Total/>
           </Typography>
         </Grid>
       </Grid>
     </div>
-    </>
+    
   );
 };
 

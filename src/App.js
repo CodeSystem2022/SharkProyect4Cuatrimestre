@@ -6,13 +6,14 @@ import CheckoutPage from "./components/CheckoutPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignIn from "./components/Signin";
 import SignUp from "./components/SignUp";
-import { Link } from 'react-router-dom';
+
 
 
 function App() {
   return (
     <Router>
       <div className="App">
+       
           <Navbar></Navbar>
           <Routes>
             <Route path="/signup" element={<SignUp/>}/>
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Products />}/>
           </Routes>
           <Footer></Footer>
+        </ThemeProvider>
       </div>
     </Router>
   );
