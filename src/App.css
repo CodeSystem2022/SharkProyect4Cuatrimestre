@@ -50,4 +50,9 @@
   .App-logo {
     height: 10vmin; /* Ajusta el tamaño del logo para dispositivos móviles */
   }
+
+}
+
+#checkoutpage .carrousel {
+  display: none;
 }

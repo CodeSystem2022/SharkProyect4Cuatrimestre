@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Products from '../components/Products';
-import Carrousel from './Carrousel';
-import './script.js'; // Asegúrate de que la ruta sea correcta
+import Carousel from '../components/Carousel';
+
 
 
 
@@ -16,7 +16,8 @@ const Home = () => {
                     height={300} //esto despues se cambia en el CSS
                     alt="Ver tienda" />
                 </Link>
-                <Carrousel/>
+                <Carousel/>
+            
                 {/* ... */}
             </div>
        
