@@ -4,8 +4,7 @@ import Products from '../components/Products';
 import Carousel from '../components/Carousel';
 
 
-
-
+// Creamos la pagina como una constante, ahorramos procesos
 const Home = () => {
     return (
        
@@ -24,4 +23,5 @@ const Home = () => {
     );
 };
 
+// Exportamos página
 export default Home;
