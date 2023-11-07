@@ -1,47 +1,34 @@
+
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import { Container, Typography, Link } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
-const Footer = styled(Container)(({ theme }) => ({
-  backgroundColor: theme.palette.background.default,
-  padding: theme.spacing(3),
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-}));
-
-const Copyright = styled(Typography)(({ theme }) => ({
-  color: theme.palette.text.secondary,
-  fontSize: theme.typography.caption.fontSize,
+// Estilo CSS para el footer, cambiar lo que se necesite
+const footerStyle = {
+  position: 'fixed',
+  bottom: 0,
+  width: '100%',
+  backgroundColor: 'lightgray',
+  padding: '10px', 
   textAlign: 'center',
-}));
-
-const Links = styled(Container)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
-  marginBottom: theme.spacing(3),
-}));
-
-const LinkItem = styled(Link)(({ theme }) => ({
-  color: theme.palette.primary.light,
-  fontSize: theme.typography.caption.fontSize,
-  textDecoration: 'none',
-}));
-
-const FooterComponent = () => {
-  return (
-    <Footer>
-      <Copyright>Copyright © 2023</Copyright>
-      <Links>
-        <LinkItem href="#">Inicio </LinkItem>
-        <LinkItem href="#">Acerca de </LinkItem>
-        <LinkItem href="#">Contacto </LinkItem>
-      </Links>
-    </Footer>
-  );
 };
 
-export default FooterComponent;
+
+function Footer(props) {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      {'Team SharkDevelop '}
+      {new Date().getFullYear()}
+      {'.'}
+   <Typography>
+          <Link color="inherit" to='/'>
+        Inicio
+      </Link>{' '}
+
+   </Typography>
+    </Typography>
+  );
+}
+
+export default Footer;
