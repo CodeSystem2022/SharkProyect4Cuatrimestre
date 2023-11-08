@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getStorage, ref, uploadBytes } from 'firebase/storage';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
 
 const firebaseConfig = {
@@ -16,12 +16,19 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app)
 
-export function uploadFile(file) {
- const storage = getStorage();
- const storageRef = ref(storage, uuidv4()); // Reemplaza 'some-child' con la ubicación adecuada
- uploadBytes(storageRef, file).then(snapshot => {
-    console.log(snapshot);
- })
+/**
+ * Upload a file to firebase storage
+ * @param {File} file the file t upload
+ * @returns {Promise<string>} url of the upload file
+ */
+
+export async function uploadFile(file) {
+    const storage = getStorage();
+    const storageRef = ref(storage, uuidv4()); // Reemplaza 'some-child' con la ubicación adecuada
+     await uploadBytes(storageRef, file)
+     const url = await getDownloadURL(storageRef)
+     return url
+ 
 }
 
    
