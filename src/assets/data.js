@@ -1,36 +1,25 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+ export const data = [
+    {
+         id: 1, imgUrl: "https://images.unsplash.com/photo-1532980400857-e8d9d275d858?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fGZvb2R8ZW58MHx8MHx8fDA%3D",
+         text: "COMIDA VEGANA"
+     },
+     {
+         id: 2, imgUrl: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGZvb2R8ZW58MHx8MHx8fDA%3D",
+         text: "PLATOS DEL DIA"
+     },
+     {
+         id: 3, imgUrl: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&q=80&w=1374&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+         text: "ESPECIALIDAD DE LA CASA"
+     },
+     {
+         id: 4, imgUrl: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=1398&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+         text: "HAMBURGUESAS"
+     },
+     {
+         id: 5, imgUrl: "https://images.unsplash.com/photo-1611270629569-8b357cb88da9?auto=format&fit=crop&q=80&w=1374&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+         text: "PASTAS"
+     }
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyA55Cb5nZm-c4kc-slpWiDDZxVWoPH3fTM",
-  authDomain: "react-firebase-58f1e.firebaseapp.com",
-  projectId: "react-firebase-58f1e",
-  storageBucket: "react-firebase-58f1e.appspot.com",
-  messagingSenderId: "301301076579",
-  appId: "1:301301076579:web:e42627ff64055fc4b05e56"
-};
+    
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Inicializa Firestore
-const db = getFirestore(app);
-
-// Declara la variable 'data' fuera del alcance de la función de devolución de llamada
-let data = [];
-
-// Consulta la colección "archivos" y obtén los datos
-getDocs(collection(db, "archivos")).then((querySnapshot) => {
-  const newData = [];
-  querySnapshot.forEach((doc) => {
-    newData.push(doc.data());
-  });
-
-  // Reemplaza el array "data" con el nuevo array "newData"
-  data = newData;
-  console.log("El array 'data' ha sido actualizado con los datos de Firebase.");
-});
-
-// Exporta la variable 'data'
-export { data }
+ ];
