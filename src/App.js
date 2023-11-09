@@ -8,6 +8,7 @@ import SignIn from "./components/Signin";
 import SignUp from "./components/SignUp";
 import Home from "./pages/Home";
 import Subir from "./Admin.js";
+import ProductPage from "./components/ProductPage.js";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <div className="App">
           <Navbar/>
           <Routes>
+            <Route path="/product/:id" component={<ProductPage/>} />
             <Route path="/admin" element={<Subir/>}/>
             <Route path="/signup" element={<SignUp/>}/>
             <Route path="/signin" element={<SignIn/>}/>
