@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Products from "../components/Products";
-import {Carousel} from "../components/Carousel";
-import Carrousel2 from "../components/Carousel2";
 import Footer from "../components/Footer";
 import products from "../product-data";
 import { data } from "../assets/data";
+import Carrousel from "../components/Carousel";
+import Carrousel2 from "../components/Carousel2";
 
 
 // Creamos la pagina como una constante, ahorramos procesos
@@ -20,34 +20,8 @@ const Home = () => {
           alt="Ver tienda"
         />
       </Link>
-      <Carousel
-  className="h-[27rem]"
-  slidesPerView={1}
-  spaceBetween={30}
-//   buttons 
-  navigation
-  centeredSlides
-  loop
-  autoplay={{
-    delay: 2500,
-    disableOnInteraction: true,
-  }}
-  breakpoints={{
-    880: {  
-      slidesPerView: 2,
-    },
-    1220: {
-      slidesPerView: 3,
-    },
-  }}
- > 
-  {data.map((item) => {
-    return <li key={item.id}>
-      <img src={item.imgUrl} width={300} height={300} />
-      <p>{item.text}</p>
-    </li>
-  })}
-</Carousel>
+      <Carrousel/>
+      <Carrousel2/>
       {/* ... */}
     </div>
   );

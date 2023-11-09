@@ -11,7 +11,7 @@ import './Carousel.css';
 // import required modules
 import { Pagination } from 'swiper/modules';
 
-export default function Carrousel2() {
+export default function Carousel2() {
  const listRef = useRef();
  const [currentIndex, setCurrentIndex] = useState(0);
 
