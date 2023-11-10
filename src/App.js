@@ -18,7 +18,7 @@ function App() {
       <div className="App">
           <Navbar/>
           <Routes>
-            <Route path="/product/:id" component={<ProductPage/>} />
+            <Route path="/product/:id" element={<ProductPage/>} />
             <Route path="/admin" element={<Subir/>}/>
             <Route path="/signup" element={<SignUp/>}/>
             <Route path="/signin" element={<SignIn/>}/>

@@ -1,0 +1,15 @@
+.product-container {
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.product-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.product-image {
+    width: 50vw;
+}

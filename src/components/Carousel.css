@@ -98,3 +98,17 @@ div.active {
   height: 15px;
   border-radius: 50%;
 }
+
+.container {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000000
+}

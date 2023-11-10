@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 // Importamos los datos de los productos
 import products from '../product-data.js';
+import './ProductPage.css'
 
 // Definimos el componente ProductPage
 function ProductPage() {
@@ -29,9 +30,11 @@ function ProductPage() {
 
   // Si encontramos el producto, mostramos información sobre el producto
   return (
-    <div>
+    <div className='product-container'>
       <h2>{product.name}</h2>
-      <img src={product.image} alt={product.name} />
+      <div className='product-image-container'>
+      <img className='product-image' src={product.image} alt={product.name} />
+      </div>
       <p>{product.description}</p>
       {/* Aquí puedes agregar más detalles sobre el producto */}
     </div>
