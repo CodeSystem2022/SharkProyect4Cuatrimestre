@@ -2,11 +2,15 @@
 //importaciones necesarias para la clase:
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import React from "react";
+import React , { useEffect, useState }from "react";
 import { useStateValue } from './StateProvider';
 import CheckoutCard from "./CheckoutCard";
 import { Total } from "./Total";
+//importacion de billetera de mercadoPago
+import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 
+//importacion de libreria axios de js para peticiones HTTP
+import axios from "axios";
 
 //estilos para la pagina de pago
 const checkoutPageStyle = {
@@ -19,9 +23,38 @@ const checkoutPageStyle = {
 
 //Clase Checkout Page
 const CheckoutPage = () => {
-  const [{basket}, dispatch] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
+  const [preferenceId, setPreferenceId] = useState([]);
 
-  //Funcion FormRow que renderiza cada producto en una cuadricula
+  // Inicializar Mercado Pago con tu clave pública
+
+  initMercadoPago('TEST-d07d0266-fdb6-41ea-bfc1-e4f743095867');
+
+  const createPreference = async () => {
+    try {
+      const response = await axios.post("http://localhost:8080/create_preference", {
+        items: basket.map(item => ({
+          description: item.description,
+          price: item.price,
+          quantity: 1,
+        }))
+      });
+
+      const { id } = response.data;
+      return id;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleBuy = async () => {
+    const id = await createPreference();
+    if (id) {
+      console.log('Preference ID:', id);
+      setPreferenceId(id);
+    }
+  };
+    //Funcion FormRow que renderiza cada producto en una cuadricula
   function FormRow() {
     return (
       <React.Fragment>
@@ -48,7 +81,9 @@ const CheckoutPage = () => {
         </Grid>
         <Grid item xs={12} sm={8} md={9} container spacing={2}>
           <Typography align="center" gutterBottom variant="h4">
-           <Total/>
+           <Total handleBuy={handleBuy} />
+           {preferenceId && <Wallet initialization={{ preferenceId }} />}
+
           </Typography>
         </Grid>
       </Grid>

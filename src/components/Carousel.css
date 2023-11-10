@@ -10,6 +10,7 @@ li {
 
 li {
     position: relative;
+    cursor: pointer;
   }
   
 li p {
