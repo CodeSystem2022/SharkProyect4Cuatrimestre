@@ -1,17 +1,17 @@
 import React from 'react';
 
-function Slide({ imageUrl, price, foodName, rating }) {
+function Slide({ foodItem }) {
   return (
     <div className="swiper-slide tranding-slide">
       <div className="tranding-slide-img">
-        <img src={imageUrl} alt="Tranding" />
+        <img src={foodItem.imageUrl} alt="Tranding" />
       </div>
       <div className="tranding-slide-content">
-        <h1 className="food-price">{price}</h1>
+        <h1 className="food-price">{foodItem.price}</h1>
         <div className="tranding-slide-content-bottom">
-          <h2 className="food-name">{foodName}</h2>
+          <h2 className="food-name">{foodItem.foodName}</h2>
           <h3 className="food-rating">
-            <span>{rating}</span>
+            <span>{foodItem.rating}</span>
             {/* Aca podría renderizar los íconos de estrellas según el rating */}
           </h3>
         </div>
@@ -21,3 +21,4 @@ function Slide({ imageUrl, price, foodName, rating }) {
 }
 
 export default Slide;
+

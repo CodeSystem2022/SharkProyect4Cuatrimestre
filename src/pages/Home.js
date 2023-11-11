@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Products from '../components/Products'
 import { Carousel } from '../components/Carousel'
-import Carrousel2 from '../components/Carousel2'
+
 import Footer from '../components/Footer'
 import products from '../product-data'
 import { data } from '../assets/data'
