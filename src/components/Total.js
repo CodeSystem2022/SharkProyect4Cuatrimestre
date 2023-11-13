@@ -5,6 +5,7 @@ import { getBasketTotal } from './reducer';
 import { useStateValue } from './StateProvider';
 
 
+
 const totalSyles = {
     root: {
         display: 'flex',
@@ -20,13 +21,14 @@ const totalSyles = {
 
 
 
-export const Total = () => {
+export const Total = ({ handleBuy }) => {
   const [{basket}, dispatch] = useStateValue();
   return (
     <div className={totalSyles.root} >
         <h5> Total items: {basket?.length}</h5>
         <h5> {accounting.formatMoney(getBasketTotal(basket), "$")}</h5>
-        <Button className={totalSyles.button} variant="contained" color="secondary">Check out</Button>
+        <Button className={totalSyles.button} variant="contained" color="secondary" onClick={handleBuy}>Finalizar Compra</Button>
+        
     </div>
     
   )
