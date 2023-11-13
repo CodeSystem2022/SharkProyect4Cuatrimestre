@@ -5,6 +5,9 @@ import { useStateValue } from './StateProvider';  // Import the state and dispat
 import { actionTypes } from './reducer';
 import products from '../product-data.js';
 import './ProductPage.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
 
 // Definimos el componente ProductPage
 function ProductPage() {
@@ -23,7 +26,8 @@ function ProductPage() {
       item: {
         id: product.id,
         name: product.name,
-        // Add other product details as needed
+        image: product.image,
+        precio: product.price
       },
     });
   };
@@ -33,17 +37,27 @@ function ProductPage() {
   }
 
   return (
+    <div className= 'parent-container'>
     <div className='product-container'>
-      
-      <h2>{product.name}</h2>
       <div className='product-image-container'>
         <img className='product-image' src={product.image} alt={product.name} />
+      <div className='product-details'>
+        <h2>{product.name}</h2>
+      <div className='texto'>
+        <p>{product.description}</p>
       </div>
-      <p>{product.description}</p>
-      <button onClick={addToBasket}>Add to Cart</button> {/* Add this line for the "Add to Cart" button */}
-      {/* Other product details */}
+      <div className='precio'>
+        <p>Precio: ${product.price}</p>
+      </div>
+        <button onClick={addToBasket}>
+          <FontAwesomeIcon icon={faShoppingCart} />
+        </button>
+        </div>
+      </div>
+    </div>
     </div>
   );
+  
 }
 
 export default ProductPage;

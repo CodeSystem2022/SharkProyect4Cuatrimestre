@@ -1,15 +1,60 @@
-.product-container {
-    max-width: 100vw;
+.parent-container {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Asegura que el contenedor padre ocupe toda la altura de la vista */
+}
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    border: 0.5px solid #ddd; /* Borde más pequeño */
+    border-radius: 10px; 
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden; /* Añadido para evitar que la imagen se sobresalga */
+    width: 800px;
+    height: 400px;
+}
+  
+.product-image-container {
+    flex: 1;
+    margin-right: 20px;
+}
+  
+.product-image {
+    width: 100%;
+    max-width: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+    float: left;
+    margin-top: 3px;
+}
+  
+.product-details {
+    flex: 2;
+
+}
+  
+button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
-.product-image-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.texto {
+    font-family: 'Lato Light', sans-serif;
 }
-.product-image {
-    width: 50vw;
+
+.precio {
+    font-family: 'Source Sans Pro', sans-serif;
 }
+
